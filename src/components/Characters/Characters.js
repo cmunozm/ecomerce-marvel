@@ -46,6 +46,7 @@ const Characters = () => {
       <div className={classes.characters}>
         {charactersList.map((item) => (
           <CharacterCard
+            key={item.id}
             id={item.id}
             name={item.name}
             image={item.image}

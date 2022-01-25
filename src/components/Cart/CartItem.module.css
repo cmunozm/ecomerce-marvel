@@ -1,0 +1,26 @@
+.cartItem {
+  border-bottom: 1px solid var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cartItem span {
+  font-size: 1.5rem;
+  padding-left: 1rem;
+  width: 80%;
+}
+
+.imageContainer {
+  position: relative;
+  height: 5rem;
+  width: 5rem;
+  border: 2px solid var(--white);
+}
+
+.imageContainer img {
+  height: 100%;
+}

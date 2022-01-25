@@ -7,6 +7,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--black);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 code {
@@ -16,4 +21,13 @@ code {
 
 h1 {
   margin: 0;
+}
+
+li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
 }

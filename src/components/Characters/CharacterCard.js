@@ -1,8 +1,9 @@
+import Card from '../ui/Card';
 import classes from './CharacterCard.module.css';
 
 const CharacterCard = (props) => {
   return (
-    <div className={classes.card}>
+    <Card>
       <div className={classes.imgContainer}>
         <img src={props.image} alt={props.name} />
       </div>
@@ -12,7 +13,7 @@ const CharacterCard = (props) => {
         </div>
         <button>Add</button>
       </div>
-    </div>);
+    </Card>);
 };
 
 export default CharacterCard;

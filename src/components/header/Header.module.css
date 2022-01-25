@@ -1,27 +1,41 @@
-@import url('../../variables.css');
-
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--black);
-  height: 5rem;
+  background-color: var(--red);
+  height: 8rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 0 8rem;
   box-sizing: border-box;
   z-index: 10;
+  clip-path: polygon(0% 91%, 0% 0%, 100% 0%, 100% 90%, 50% 60%);
+}
+
+.border {
+  content: '';
+  width: 100%;
+  height: 8rem;
+  background-color: var(--yellow);
+  -webkit-clip-path: polygon(0% 91%, 0% 0%, 100% 0%, 100% 90%, 50% 60%);
+  clip-path: polygon(0% 91%, 0% 0%, 100% 0%, 100% 90%, 50% 58%);
+  position: fixed;
+  top: 4px;
+  left: 0;
+  z-index: 5;
+  display: block;
 }
 
 .banner {
-  height: 20rem;
+  height: 15rem;
   overflow: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 3rem;
+  border-bottom: 10px solid var(--yellow);
 }
 
 .banner img {
@@ -29,11 +43,27 @@
 }
 
 .logo {
-  color: var(--red);
+  position: relative;
+  outline: 2px solid var(--yellow);
+  display: inline-block;
+  top: -13px;
+  height: 8rem;
 }
 
-.car {
-  background-color: var(--black);
+.logo img {
+  height: 100%;
+}
+
+.actions {
+  margin: 1.5rem 0 0;
+}
+
+.actions .login {
+  margin-left: 2rem;
+  font-size: 1.25rem;
   color: var(--white);
-  font-size: 1.5rem;
+}
+
+.actions .login:hover {
+  color: var(--yellow);
 }
