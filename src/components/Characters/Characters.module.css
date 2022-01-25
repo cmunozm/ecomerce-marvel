@@ -1,0 +1,31 @@
+.characters {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem 2rem;
+  max-width: 90rem;
+  margin: auto;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0 0 4rem;
+  text-align: center;
+  color: var(--gray);
+  position: relative;
+  top: -89px;
+}
+
+.title span {
+  background-color: var(--white);
+  color: var(--red);
+  position: absolute;
+  top: -2rem;
+  left: calc(50% - 6.5rem);
+  width: 13rem;
+  display: block;
+  margin: auto;
+  padding: 1rem 0;
+  border-radius: 13px;
+  font-size: 3rem;
+  font-weight: bold;
+}

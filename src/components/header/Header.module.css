@@ -1,0 +1,39 @@
+@import url('../../variables.css');
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--black);
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8rem;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.banner {
+  height: 20rem;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.logo {
+  color: var(--red);
+}
+
+.car {
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 1.5rem;
+}
