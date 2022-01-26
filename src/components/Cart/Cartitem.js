@@ -1,12 +1,20 @@
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../store/cart-slice';
 import classes from './CartItem.module.css';
 
-const Cartitem = () => {
+const Cartitem = (props) => {
+
+  const dispatch = useDispatch();
+  const removeItemHandler = () => {
+    dispatch(cartActions.removeItemFromCart(props.id));
+  }
+
   return <div className={classes.cartItem}>
     <div className={classes.imageContainer}>
-      <img src="http://i.annihil.us/u/prod/marvel/i/mg/4/b0/5d939e25a9787.jpg" alt="100th Anniversary Special (2014)"></img>
+      <img src={props.image} alt={props.name}></img>
     </div>
-    <span>100th Anniversary Special (2014)</span>
-    <button>Remove</button>
+    <span>{props.name}</span>
+    <button onClick={removeItemHandler} className={classes.button}>Remove</button>
   </div>;
 };
 

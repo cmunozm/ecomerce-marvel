@@ -1,17 +1,27 @@
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../store/cart-slice';
 import Card from '../ui/Card';
 import classes from './CharacterCard.module.css';
 
 const CharacterCard = (props) => {
+
+  const { id, name, image } = props;
+  const dispatch = useDispatch();
+
+  const addToCartHandler = () => {
+    dispatch(cartActions.addItemToCart({ id, name, image, inCart: true }));
+  };
+
   return (
     <Card>
+      <div className={classes.overlay}>
+        <button onClick={addToCartHandler}>Add to Cart</button>
+      </div>
       <div className={classes.imgContainer}>
-        <img src={props.image} alt={props.name} />
+        <img src={image} alt={name} />
       </div>
       <div className={classes.footer}>
-        <div className={classes.title}>
-          {props.name}
-        </div>
-        <button>Add</button>
+        <span>{name}</span>
       </div>
     </Card>);
 };

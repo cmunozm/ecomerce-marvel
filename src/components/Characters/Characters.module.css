@@ -6,15 +6,6 @@
   margin: auto;
 }
 
-.title {
-  font-size: 2rem;
-  margin: 0 0 4rem;
-  text-align: center;
-  color: var(--gray);
-  position: relative;
-  top: -89px;
-}
-
 .title span {
   background-color: var(--white);
   color: var(--red);

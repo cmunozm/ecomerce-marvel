@@ -2,10 +2,10 @@
   background-color: var(--white);
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
 .card:hover {
-  cursor: pointer;
   transition: transform .17s ease-in-out;
   transform: translate3d(0, -10px, 0);
 }

@@ -40,9 +40,6 @@ const Characters = () => {
 
   return (
     <>
-      <div className={classes.title}>
-        <span>Series</span>
-      </div>
       <div className={classes.characters}>
         {charactersList.map((item) => (
           <CharacterCard
