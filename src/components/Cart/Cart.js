@@ -8,12 +8,13 @@ const Cart = () => {
   const totalItems = useSelector(state => state.cart.totalItems);
 
   return (
-    <section className={classes.cart}>
+    <section>
       {cartItems.map(item => (
         <Cartitem
           id={item.id}
           name={item.name}
           image={item.image}
+          description={item.description}
         />
       ))}
       <div className={classes.actions}>

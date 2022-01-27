@@ -23,6 +23,12 @@
   cursor: pointer;
 }
 
+.overlay .btnRemove {
+  color: var(--white);
+  background-color: var(--red);
+  border-color: var(--red);
+}
+
 .overlay button:hover {
   border-color: var(--yellow);
 }
@@ -42,7 +48,7 @@
 }
 
 .imgContainer img {
-  height: 100%;
+  width: 100%;
   position: absolute;
 }
 
@@ -55,4 +61,17 @@
   font-weight: bold;
   display: block;
   text-align: center;
+}
+
+.added {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+  background: var(--yellow);
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.35rem 0.75rem;
+  top: 0;
+  right: 0;
 }
