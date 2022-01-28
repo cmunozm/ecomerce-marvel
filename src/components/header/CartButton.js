@@ -29,7 +29,6 @@ const CartButton = () => {
     <span className={classes.icon}>
       <FontAwesomeIcon icon={faShoppingCart} />
     </span>
-    <span>Your Cart</span>
     <span className={classes.badge}>{itemsQuantity}</span>
   </button>;
 };

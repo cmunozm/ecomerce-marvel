@@ -8,7 +8,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 0 8rem;
+  padding: 0 5rem;
   box-sizing: border-box;
   z-index: 10;
   clip-path: polygon(0% 91%, 0% 0%, 100% 0%, 100% 90%, 50% 60%);
@@ -58,10 +58,13 @@
   margin: 1.5rem 0 0;
 }
 
-.actions .login {
-  margin-left: 2rem;
+.actions li>span {
   font-size: 1.25rem;
   color: var(--white);
+}
+
+.actions .login {
+  margin-left: 1rem;
   cursor: pointer;
 }
 

@@ -22,7 +22,6 @@ const Characters = () => {
     }
 
     const responseData = await response.json();
-    console.log(responseData);
     const LoadedCharacters = [];
 
     for (const character in responseData.data.results) {

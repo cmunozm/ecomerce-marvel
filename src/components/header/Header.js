@@ -10,7 +10,8 @@ import { useHistory } from 'react-router-dom';
 
 const Header = () => {
 
-  const isLogedIn = useSelector(state => state.login.isLogedIng);
+  const isLogedIn = useSelector(state => state.login.username);
+  const username = isLogedIn;
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -26,16 +27,21 @@ const Header = () => {
       <Link to='/' className={classes.logo}>
         <img src={Logo} alt='Logo Marvel' />
       </Link>
-      <ul className={classes.actions}>
-        {isLogedIn && <li>
-          <Link to='/cart-details'>
-            <CartButton />
-          </Link>
-        </li>}
-        {isLogedIn && <li>
-          <span className={classes.login} onClick={logoutHandler}>{!isLogedIn ? 'Login' : 'Logout'}</span>
-        </li>}
-      </ul>
+      {isLogedIn &&
+        <ul className={classes.actions}>
+          <li>
+            <span>Welcome {username}</span>
+          </li>
+          <li>
+            <Link to='/cart-details'>
+              <CartButton />
+            </Link>
+          </li>
+          <li>
+            <span className={classes.login} onClick={logoutHandler}>Logout</span>
+          </li>
+        </ul>
+      }
     </header>
     <span className={classes.border}></span>
     <div className={classes.banner}>

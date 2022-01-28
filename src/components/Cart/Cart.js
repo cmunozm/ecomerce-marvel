@@ -11,6 +11,7 @@ const Cart = () => {
     <section>
       {cartItems.map(item => (
         <Cartitem
+          key={item.id}
           id={item.id}
           name={item.name}
           image={item.image}

@@ -11,10 +11,12 @@ const charactersSlice = createSlice({
     },
 
     charactersInCart(state, action) {
-      const character = state.charactersList.find(item => item.id === action.payload.id);
+      const { id } = state.charactersList.find(item => item.id === action.payload.id);
       state.charactersList.forEach((item, index) => {
-        if (item.id === character.id) {
+        if (item.id === id) {
           state.charactersList[index].inCart = action.payload.inCart;
+          localStorage.setItem(id, JSON.stringify(item));
+          return;
         }
       })
     }
