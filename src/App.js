@@ -1,4 +1,4 @@
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Header from './components/header/Header';
 import CharactersPage from './pages/CharactersPage';
 import CartDetailsPage from './pages/CartDetailsPage';
@@ -7,23 +7,20 @@ import Layout from './components/ui/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginActions } from './store/login-slice';
 import { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import { charactersActions } from './store/characters-slice';
-import { cartActions } from './store/cart-slice';
 
 function App() {
 
   const dispatch = useDispatch();
-  const history = useHistory();
+  const isLogedIn = useSelector(state => state.login.isLogedIng);
+
 
   useEffect(() => {
     dispatch(loginActions.reloadPage({ username: localStorage.getItem('username') }));
+  }, [dispatch]);
 
-    history.push('/');
-  }, []);
-  const isLogedIn = useSelector(state => state.login.isLogedIng);
 
   return (
+
     <>
       <Header />
       <Layout>
@@ -51,6 +48,7 @@ function App() {
         </Switch>
       </Layout>
     </>
+
   );
 }
 

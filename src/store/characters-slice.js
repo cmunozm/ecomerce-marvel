@@ -17,6 +17,19 @@ const charactersSlice = createSlice({
       }
     },
 
+    removeCharacterFromCart(state, action) {
+
+      state.addedToCart = state.addedToCart.filter(item => +item !== +action.payload.id);
+
+      state.charactersList.forEach((item, index) => {
+        if (item.id === action.payload.id) {
+          state.charactersList[index].inCart = action.payload.inCart;
+          localStorage.setItem('cart', JSON.stringify([...state.addedToCart]));
+          return;
+        }
+      })
+    },
+
     loadCharacters(state, action) {
       state.charactersList = [...action.payload];
       state.charactersList.forEach(item => {

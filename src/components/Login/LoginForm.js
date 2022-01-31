@@ -12,9 +12,7 @@ const LoginForm = () => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-
     const enteredUsername = usernameInputRef.current.value;
-
     dispatch(loginActions.login({ username: enteredUsername }));
     history.push('/');
   }

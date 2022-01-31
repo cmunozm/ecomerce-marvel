@@ -10,7 +10,7 @@ const Cartitem = (props) => {
 
   const removeItemHandler = () => {
     dispatch(cartActions.removeItemFromCart(id));
-    dispatch(charactersActions.charactersInCart({ id, inCart: false }))
+    dispatch(charactersActions.removeCharacterFromCart({ id, inCart: false }));
   }
 
   return <div className={classes.cartItem}>

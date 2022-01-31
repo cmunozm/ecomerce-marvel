@@ -1,6 +1,13 @@
 import { PayPalButton } from "react-paypal-button-v2";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { resetCharacterData } from "../../store/character-actions";
 
 const PaypalButton = (props) => {
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   return (
     <PayPalButton
       amount={props.total}
@@ -10,14 +17,10 @@ const PaypalButton = (props) => {
       }}
 
       onSuccess={(details, data) => {
-        alert("Transaction completed by " + details.payer.name.given_name);
+        //alert("Transaction completed by " + details.payer.name.given_name);
 
-        return fetch("/paypal-transaction-complete", {
-          method: "post",
-          body: JSON.stringify({
-            orderID: data.orderID
-          })
-        });
+        dispatch(resetCharacterData());
+        history.push('/');
       }}
     />
   );

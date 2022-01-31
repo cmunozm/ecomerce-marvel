@@ -16,7 +16,7 @@ const CharacterCard = (props) => {
 
   const removeFromCartHandler = () => {
     dispatch(cartActions.removeItemFromCart(id));
-    dispatch(charactersActions.charactersInCart({ id, inCart: false }))
+    dispatch(charactersActions.removeCharacterFromCart({ id, inCart: false }));
   }
 
   return (

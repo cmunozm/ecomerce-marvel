@@ -7,6 +7,7 @@ import CartButton from './CartButton';
 import { useDispatch } from 'react-redux';
 import { loginActions } from '../../store/login-slice';
 import { useHistory } from 'react-router-dom';
+import { resetCharacterData } from '../../store/character-actions';
 
 const Header = () => {
 
@@ -18,6 +19,7 @@ const Header = () => {
   const logoutHandler = () => {
     if (isLogedIn) {
       dispatch(loginActions.logout());
+      dispatch(resetCharacterData());
       history.push('/login-form');
     }
   };
