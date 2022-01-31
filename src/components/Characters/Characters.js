@@ -4,6 +4,7 @@ import classes from './Characters.module.css';
 import CharacterCard from './CharacterCard';
 import Spinner from '../ui/Spinner';
 import { charactersActions } from '../../store/characters-slice';
+import { cartActions } from '../../store/cart-slice';
 
 
 const Characters = () => {
@@ -34,18 +35,19 @@ const Characters = () => {
       });
     }
 
+    const addedToCart = JSON.parse(localStorage.getItem('cart'));
+    dispatch(charactersActions.loadCharactersInCart(addedToCart));
     dispatch(charactersActions.loadCharacters(LoadedCharacters));
+    dispatch(cartActions.reloadItems(LoadedCharacters.filter(item => item.inCart === true)));
     setIsLoading(false)
 
   };
 
   useEffect(() => {
-    if (charactersList.length === 0) {
-      fetchData()
-        .catch((error) => {
-          alert(error.message)
-        });
-    }
+    fetchData()
+      .catch((error) => {
+        alert(error.message)
+      });
   }, []);
 
   return (

@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loginActions } from './store/login-slice';
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { charactersActions } from './store/characters-slice';
+import { cartActions } from './store/cart-slice';
 
 function App() {
 
@@ -16,6 +18,7 @@ function App() {
 
   useEffect(() => {
     dispatch(loginActions.reloadPage({ username: localStorage.getItem('username') }));
+
     history.push('/');
   }, []);
   const isLogedIn = useSelector(state => state.login.isLogedIng);
@@ -32,7 +35,7 @@ function App() {
           }
           {!isLogedIn &&
             <Route path='/' exact>
-              <Redirect to='/login-form' />
+              <LoginPage />
             </Route>
           }
           {isLogedIn &&

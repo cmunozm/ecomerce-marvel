@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import PaypalButton from '../paypalButton.js/PaypalButton';
 import classes from './Cart.module.css';
 import Cartitem from './Cartitem';
 
@@ -19,8 +20,11 @@ const Cart = () => {
         />
       ))}
       <div className={classes.actions}>
-        <span>Total Items:</span>
-        <span>{totalItems}</span>
+        <span>Total:</span>
+        <span>${totalItems}</span>
+      </div>
+      <div className='centered'>
+        <PaypalButton total={totalItems} />
       </div>
     </section>
   );

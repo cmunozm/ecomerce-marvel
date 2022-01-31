@@ -24,6 +24,7 @@ const loginSlice = createSlice({
       state.isLogedIng = false;
       state.username = '';
       localStorage.removeItem('username');
+      localStorage.removeItem('cart');
     }
   }
 });
